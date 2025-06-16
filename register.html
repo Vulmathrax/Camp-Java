@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galactic Art Camp Registration</title>
+  <style>
+    body {
+      background: #0d0f2d;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;}
+    main {
+      max-width: 700px;
+      margin: auto;
+      background-color: rgba(0,0,0,0.8);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #4dd0e1;}
+    label, input, select, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      font-size: 1em;}
+    input[type="submit"], input[type="button"] {
+      width: auto;
+      background-color: #4dd0e1;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #000;
+      border-radius: 6px;
+      cursor: pointer;}
+    #confirmation, #message2 {
+      margin-top: 20px;
+      padding: 15px;
+      display: none;
+      background-color: #1b1f3b;
+      border-left: 5px solid #4dd0e1;}
+    #confirm-image {
+      display: none;
+      margin-top: 15px;
+      width: 150px;}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Register for Galactic Art Camp</h1>
+    <form id="campForm">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" required>
+
+      <label for="age">Select Age:</label>
+      <select id="age" name="age">
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+
+      <input type="button" value="Register Now" onclick="submitForm()">
+      <input type="button" value="Cancel" onclick="cancelForm()">
+    </form>
+
+    <div id="confirmation"></div>
+    <div id="message2"></div>
+    <img id="confirm-image" src="pumpkin.png" alt="Confirmation Pumpkin">
+  </main>
+
+  <script>
+    function submitForm() {
+      const fname = document.getElementById("fname").value;
+      const age = parseInt(document.getElementById("age").value);
+      const confirmation = document.getElementById("confirmation");
+      const image = document.getElementById("confirm-image");
+
+      // Show name confirmation
+      confirmation.innerHTML = `Thank you for registering, <strong>${fname}</strong>!`;
+
+      // Add age-based message
+      const message2 = document.getElementById("message2");
+      if (age < 10) {
+        message2.innerHTML = "You are in the <strong>Star Sprites</strong> group!";
+      } else {
+        message2.innerHTML = "You are in the <strong>Comet Crew</strong>!";
+      }
+
+      // Reveal messages and image
+      confirmation.style.display = "block";
+      message2.style.display = "block";
+      image.style.display = "block";
+
+      // Highlight section
+      document.querySelector("main").style.boxShadow = "0 0 25px #ffd700";}
+
+    function cancelForm() {
+      const msg = document.getElementById("message2");
+      msg.innerHTML = "Sorry to see you go!";
+      msg.style.display = "block";
+
+      document.getElementById("confirmation").style.display = "none";
+      document.getElementById("confirm-image").style.display = "none";}
+  </script>
+</body>
+</html>
