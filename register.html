@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galactic Art Camp Registration</title>
- <style>
+  <style>
     body {
       background: #0d0f2d url("Starmap.jpg") no-repeat center center fixed;
       background-size: cover;
@@ -67,8 +67,7 @@
       display: flex;
       justify-content: space-between;}
 
-    input[type="submit"],
-    input[type="reset"] {
+    input[type="button"] {
       padding: 12px 24px;
       background-color: #4dd0e1;
       border: none;
@@ -78,16 +77,26 @@
       cursor: pointer;
       transition: background-color 0.3s ease;}
 
-    input[type="submit"]:hover,
-    input[type="reset"]:hover {
+    input[type="button"]:hover {
       background-color: #00bcd4;}
+
+    #confirmation, #message2 {
+      margin-top: 20px;
+      padding: 15px;
+      display: none;
+      background-color: #1b1f3b;
+      border-left: 5px solid #4dd0e1;}
+
+    #confirm-image {
+      display: none;
+      margin-top: 15px;
+      width: 150px;}
   </style>
 </head>
 <body>
   <main>
     <h1>Register for Galactic Art Camp</h1>
-     <form action="#" method="post">
-
+    <form id="campForm">
       <label for="fname">First Name:</label>
       <input type="text" id="fname" name="fname" required>
 
@@ -133,26 +142,9 @@
       <input type="date" id="date" name="date">
 
       <div class="buttons">
-        <input type="submit" value="Register Now">
-        <input type="reset" value="Cancel">
-        
-    <form id="campForm">
-      <label for="fname">First Name:</label>
-      <input type="text" id="fname" name="fname" required>
-
-      <label for="age">Select Age:</label>
-      <select id="age" name="age">
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select>
-
-      <input type="button" value="Register Now" onclick="submitForm()">
-      <input type="button" value="Cancel" onclick="cancelForm()">
+        <input type="button" value="Register Now" onclick="submitForm()">
+        <input type="button" value="Cancel" onclick="cancelForm()">
+      </div>
     </form>
 
     <div id="confirmation"></div>
@@ -167,10 +159,8 @@
       const confirmation = document.getElementById("confirmation");
       const image = document.getElementById("confirm-image");
 
-      // Show name confirmation
       confirmation.innerHTML = `Thank you for registering, <strong>${fname}</strong>!`;
 
-      // Add age-based message
       const message2 = document.getElementById("message2");
       if (age < 10) {
         message2.innerHTML = "You are in the <strong>Star Sprites</strong> group!";
@@ -178,21 +168,19 @@
         message2.innerHTML = "You are in the <strong>Comet Crew</strong>!";
       }
 
-      // Reveal messages and image
       confirmation.style.display = "block";
       message2.style.display = "block";
       image.style.display = "block";
-
-      // Highlight section
-      document.querySelector("main").style.boxShadow = "0 0 25px #ffd700";}
+      document.querySelector("main").style.boxShadow = "0 0 25px #ffd700";
+    }
 
     function cancelForm() {
       const msg = document.getElementById("message2");
       msg.innerHTML = "Sorry to see you go!";
       msg.style.display = "block";
-
       document.getElementById("confirmation").style.display = "none";
-      document.getElementById("confirm-image").style.display = "none";}
+      document.getElementById("confirm-image").style.display = "none";
+    }
   </script>
 </body>
 </html>
