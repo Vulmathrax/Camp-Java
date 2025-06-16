@@ -4,43 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galactic Art Camp Registration</title>
-  <style>
+ <style>
     body {
-      background: #0d0f2d;
+      background: #0d0f2d url("Starmap.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Verdana', sans-serif;
       color: #ffffff;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 20px;}
+      margin: 0;
+      padding: 0;}
+
     main {
       max-width: 700px;
-      margin: auto;
-      background-color: rgba(0,0,0,0.8);
+      margin: 50px auto;
+      background-color: rgba(0, 0, 0, 0.85);
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 0 15px #4dd0e1;}
-    label, input, select, textarea {
-      display: block;
+      box-shadow: 0 0 20px #4dd0e1;}
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #4dd0e1;
+      margin-bottom: 20px;}
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;}
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;}
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="file"],
+    input[type="date"],
+    select,
+    textarea {
       width: 100%;
-      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
       font-size: 1em;}
-    input[type="submit"], input[type="button"] {
-      width: auto;
+
+    textarea {
+      resize: vertical;}
+
+    fieldset {
+      border: 1px solid #4dd0e1;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;}
+
+    legend {
+      font-size: 1.2em;
+      color: #ffcc80;}
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;}
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 12px 24px;
       background-color: #4dd0e1;
       border: none;
-      padding: 10px 20px;
+      border-radius: 8px;
       font-size: 1em;
       color: #000;
-      border-radius: 6px;
-      cursor: pointer;}
-    #confirmation, #message2 {
-      margin-top: 20px;
-      padding: 15px;
-      display: none;
-      background-color: #1b1f3b;
-      border-left: 5px solid #4dd0e1;}
-    #confirm-image {
-      display: none;
-      margin-top: 15px;
-      width: 150px;}
+      cursor: pointer;
+      transition: background-color 0.3s ease;}
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #00bcd4;}
   </style>
 </head>
 <body>
