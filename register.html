@@ -86,6 +86,56 @@
 <body>
   <main>
     <h1>Register for Galactic Art Camp</h1>
+     <form action="#" method="post">
+
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" required>
+
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" required>
+
+      <label for="about">Tell us about your child's art interests:</label>
+      <textarea id="about" name="about" rows="4" placeholder="My child loves drawing nebulas..." required></textarea>
+
+      <label for="email">Parent Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <fieldset>
+        <legend>T-Shirt Size</legend>
+        <label><input type="radio" name="size" value="small" checked> Small</label>
+        <label><input type="radio" name="size" value="medium"> Medium</label>
+        <label><input type="radio" name="size" value="large"> Large</label>
+        <label><input type="radio" name="size" value="xl"> Extra Large</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Select Interests</legend>
+        <label><input type="checkbox" name="interest" value="space-painting"> Space Painting</label>
+        <label><input type="checkbox" name="interest" value="clay-modeling"> Clay Modeling</label>
+        <label><input type="checkbox" name="interest" value="galaxy-collage"> Galaxy Collage</label>
+      </fieldset>
+
+      <label for="age">Camper's Age:</label>
+      <select id="age" name="age">
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+
+      <label for="photo">Upload a Photo:</label>
+      <input type="file" id="photo" name="photo">
+
+      <label for="date">Date of Registration:</label>
+      <input type="date" id="date" name="date">
+
+      <div class="buttons">
+        <input type="submit" value="Register Now">
+        <input type="reset" value="Cancel">
+        
     <form id="campForm">
       <label for="fname">First Name:</label>
       <input type="text" id="fname" name="fname" required>
